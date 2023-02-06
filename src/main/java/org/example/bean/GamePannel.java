@@ -8,7 +8,7 @@ public class GamePannel extends JPanel implements ActionListener {
     static final int width=800;
     static final int height=800;
     static final int grid=50;//格子長跟寬的大小
-    static final int delay=100;
+    static final int delay=70;
 
     final int[] snakeX =new int[256];
     final int[] snakeY =new int[256];
@@ -49,7 +49,7 @@ public class GamePannel extends JPanel implements ActionListener {
      * @param g the <code>Graphics</code> object to protect
      */
     public void paintComponent(Graphics g){
-//        super.paintComponent(g);
+       super.paintComponent(g);
         draw(g); //複寫
     }
 
@@ -112,7 +112,6 @@ public class GamePannel extends JPanel implements ActionListener {
             snakeX[i]=snakeX[i-1];
             snakeY[i]=snakeY[i-1];
         }
-        System.out.println(direction);
         // Y軸向上為+
         switch (direction) {
             case 'u'-> snakeY[0] = snakeY[0] - grid;
@@ -120,7 +119,6 @@ public class GamePannel extends JPanel implements ActionListener {
             case 'l' -> snakeX[0] = snakeX[0] - grid;
             case 'r' -> snakeX[0] = snakeX[0] + grid;
         }
-        System.out.println("x="+snakeX[0]+",y="+snakeY[0]);
 
     }
 
